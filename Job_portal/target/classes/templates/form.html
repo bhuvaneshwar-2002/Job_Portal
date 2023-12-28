@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Portal</title>
+
+    <!-- Include Bootstrap CSS (if not already included) -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+    <!-- Include Font Awesome icons (if not already included) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+
+    <!-- Include your custom styles -->
+    <style>
+        .gradient-custom-3 {
+            /* fallback for old browsers */
+            background: #84fab0;
+
+            /* Chrome 10-25, Safari 5.1-6 */
+            background: -webkit-linear-gradient(to right, rgba(132, 250, 176, 0.5), rgba(143, 211, 244, 0.5));
+
+            /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+            background: linear-gradient(to right, rgba(132, 250, 176, 0.5), rgba(143, 211, 244, 0.5))
+            }
+            .gradient-custom-4 {
+            /* fallback for old browsers */
+            background: #84fab0;
+
+            /* Chrome 10-25, Safari 5.1-6 */
+            background: -webkit-linear-gradient(to right, rgba(132, 250, 176, 1), rgba(143, 211, 244, 1));
+
+            /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+            background: linear-gradient(to right, rgba(132, 250, 176, 1), rgba(143, 211, 244, 1))
+        }
+    </style>
+</head>
+<body>
+<section class="vh-100 bg-image"
+         style="background-image: url('https://mdbcdn.b-cdn.net/img/Photos/new-templates/search-box/img4.webp');">
+    <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+        <div class="container h-100">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+                    <div class="card" style="border-radius: 15px;">
+                        <div class="card-body p-5">
+                            <h2 class="text-uppercase text-center mb-5">Form Creation</h2>
+
+                           <form th:action="@{/form}" method="post" ><!--role="form" th:object="${user}">-->
+
+                               <div class="form-outline mb-4">
+                                    <label class="form-label" for="form3Example1cg">Your Name</label>
+                                    <input th:field="*{fullName}" type="text" id="form3Example1cg" class="form-control form-control-lg" required/>
+                                </div>
+
+                                <div class="form-outline mb-4">
+                                    <label class="form-label" for="form4Example3cg">Your Email</label>
+                                    <input th:field="*{email}"  type="email" id="form4Example3cg" class="form-control form-control-lg" required/>
+                                </div>
+
+                                <div class="form-outline mb-4">
+                                    <label class="form-label" for="form5Example3cg">Phone Number</label>
+                                    <input th:field="*{phno}"  type="email" id="form5Example3cg" class="form-control form-control-lg" required/>
+                                </div>
+
+                                <div class="form-outline mb-4">
+                                    <label class="form-label" for="form6Example3cg">Qualification</label>
+                                    <input th:field="*{qualification}"  type="email" id="form6Example3cg" class="form-control form-control-lg" required/>
+                                </div>
+
+                                <div class="form-outline mb-4">
+                                    <label class="form-label" for="form7Example3cg">Branch</label>
+                                    <input th:field="*{branch}"  type="email" id="form7Example3cg" class="form-control form-control-lg" required/>
+                                </div>
+
+                                <div class="form-outline mb-4">
+                                    <label class="form-label" for="form8Example3cg">Passed_Out</label>
+                                    <input th:field="*{passed_out}"  type="email" id="form8Example3cg" class="form-control form-control-lg" required/>
+                                </div>
+
+                                <div class="form-outline mb-4">
+                                    <label class="form-label" for="form3Example9cg">Skills</label>
+                                    <input th:field="*{skills}"  type="email" id="form3Example9cg" class="form-control form-control-lg" required/>
+                                </div>
+
+                                <div class="form-outline mb-4">
+                                    <label class="form-label" for="form3Example8cg">Location</label>
+                                    <input th:field="*{location}"  type="email" id="form3Example8cg" class="form-control form-control-lg" required/>
+                                </div>
+
+                                <div class="form-outline mb-4">
+                                    <label class="form-label" for="form3Example7cg">Job-Description</label>
+                                    <input th:field="*{jobDesc}"  type="email" id="form3Example7cg" class="form-control form-control-lg" required/>
+                                </div>
+
+                                <div class="form-outline mb-4">
+                                    <label class="form-label" for="form3Example6cg">Prefered Role</label>
+                                    <input th:field="*{preffered_role}"  type="email" id="form3Example6cg" class="form-control form-control-lg" required/>
+                                </div>
+
+                                <div class="form-outline mb-4">
+                                    <label class="form-label" for="form3Examplec5g">Job-Type</label>
+                                    <input th:field="*{job_type}"  type="text" id="form3Examplec5g" class="form-control form-control-lg" required/>
+                                </div>
+
+                                <div class="form-outline mb-4">
+                                    <label class="form-label" for="form3Example4cg">Salary</label>
+                                    <input th:field="*{salary}" type="number" id="form3Example4cg" class="form-control form-control-lg" required />
+                                </div>
+                                <div class="d-flex justify-content-center">
+                                    <button type="button"
+                                            class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Submit</button>
+                                </div>
+
+
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Include Bootstrap JS (if not already included) -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+</body>
+</html>
